@@ -40,6 +40,9 @@ TestResult.xml
 [Rr]eleasePS/
 dlldata.c
 
+#WinMerge backups
+*.bak
+
 # DNX
 project.lock.json
 artifacts/
