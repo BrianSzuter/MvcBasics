@@ -43,8 +43,9 @@
         <div class="form-group">
             <label asp-for="Rating" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Rating" class="form-control" />
-                <span asp-validation-for="Rating" class="text-danger" />
+                <select asp-for="Rating" asp-items="@Html.GetEnumSelectList<MvcBasics.ViewModels.RatingChoices>()">
+                    <option>Select one</option>
+                </select>
             </div>
         </div>
         <div class="form-group">

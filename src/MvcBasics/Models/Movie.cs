@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using MvcBasics.ViewModels;
 
 namespace MvcBasics.Models
 {
@@ -19,7 +20,7 @@ namespace MvcBasics.Models
         [Range(1, 100), DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$"), StringLength(5)]
-        public string Rating { get; set; }
+        [Range(0,5)]
+        public RatingChoices Rating { get; set; }
     }
 }

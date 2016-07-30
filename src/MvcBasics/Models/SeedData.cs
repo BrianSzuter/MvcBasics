@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MvcBasics.Data;
+using MvcBasics.ViewModels;
 using System;
 using System.Linq;
 
@@ -26,16 +27,16 @@ namespace MvcBasics.Models
                          ReleaseDate = DateTime.Parse("1989-1-11"),
                          Genre = "Romantic Comedy",
                          Price = 7.99M,
-                         Rating = "R"
+                         Rating = RatingChoices.R
                      },
 
                      new Movie
                      {
-                         Title = "Ghostbusters ",
+                         Title = "Ghostbusters",
                          ReleaseDate = DateTime.Parse("1984-3-13"),
                          Genre = "Comedy",
                          Price = 8.99M,
-                         Rating = "PG-13"
+                         Rating = RatingChoices.PG13
                      },
 
                      new Movie
@@ -44,17 +45,26 @@ namespace MvcBasics.Models
                          ReleaseDate = DateTime.Parse("1986-2-23"),
                          Genre = "Comedy",
                          Price = 9.99M,
-                         Rating = "PG"
+                         Rating = RatingChoices.PG
+                     },
+                     
+                     new Movie
+                     {
+                         Title = "Rio Bravo",
+                         ReleaseDate = DateTime.Parse("1959-4-15"),
+                         Genre = "Western",
+                         Price = 3.99M,
+                         Rating = RatingChoices.None
                      },
 
-                   new Movie
-                   {
-                       Title = "Rio Bravo",
-                       ReleaseDate = DateTime.Parse("1959-4-15"),
-                       Genre = "Western",
-                       Price = 3.99M,
-                       Rating = "Never Rated"
-                   }
+                     new Movie
+                     {
+                         Title = "Frozen",
+                         ReleaseDate = DateTime.Parse("2013-11-19"),
+                         Genre = "Animated",
+                         Price = 7.99M,
+                         Rating = RatingChoices.G
+                     }
                 );
                 context.SaveChanges();
             }
